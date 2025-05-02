@@ -36,11 +36,13 @@ export class AppSideRegisterComponent {
       email: this.form.value.email!,
       nombre: this.form.value.name!,
       password: this.form.value.password!,
+      ProductosP: [],
+      ProductosI: []
     }
 
     this.cuentaService.addCuenta(cuenta).subscribe({
       next:(res)=>{
-        alert("Usuario registrado correctamente")
+        alert("Usuario registrado correctamente");
         this.router.navigate(['/authentication/login']);
       },
       error:(err)=>{

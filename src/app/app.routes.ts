@@ -48,4 +48,9 @@ export const routes: Routes = [
     path: '**',
     redirectTo: 'authentication/error',
   },
+  {
+    path:'perfil',
+    loadChildren: ()=>
+      import('./pages/perfil/perfil.routes').then((m) => m.PerfilRoutes)
+  },
 ];
