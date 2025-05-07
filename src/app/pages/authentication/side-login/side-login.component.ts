@@ -30,6 +30,8 @@ export class AppSideLoginComponent {
     this.authService.authenticate(uname || '', password || '').subscribe({
       next:(res)=>{
         localStorage.setItem("AuthToken", res.token);
+        localStorage.setItem("id", res.id);
+        console.log(res);
         this.router.navigate(['/']);
       },
       error:(err)=>{

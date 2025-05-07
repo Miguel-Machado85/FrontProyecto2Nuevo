@@ -35,6 +35,7 @@ export class HeaderComponent {
 
   logOut(){
     localStorage.removeItem('AuthToken');
+    localStorage.removeItem('id');  
     this.router.navigate(['/authentication/login']);
   }
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MaterialModule } from 'src/app/material.module';
 import { Cuenta } from 'src/app/models/cuenta.model';
 import { CuentaService } from 'src/app/services/cuenta/cuenta.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'perfil',
@@ -13,14 +14,32 @@ import { CuentaService } from 'src/app/services/cuenta/cuenta.service';
 export class PerfilComponent {
   cuenta: Cuenta;
 
-  constructor(private cuentaService: CuentaService){
+  constructor(private cuentaService: CuentaService, private Router: Router){
+    
 
   }
 
   ngOnInit(){
     this.getCuenta();
   }
+  logOut(){
+    localStorage.removeItem('AuthToken');
+    localStorage.removeItem('id');  
+    this.Router.navigate(['/authentication/login']);
+  }
 
   getCuenta(){
+    const id = localStorage.getItem('id') || '';
+    this.cuentaService.getCuenta(id).subscribe({
+      next:(res)=>{
+        this.cuenta = res;
+        console.log(res);
+        console.log(this.cuenta);
+        console.log(this.cuenta.id);
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
   }
 }

@@ -18,9 +18,13 @@ export class CuentaService {
     return this.http.post(endpoint, cuenta);
   }
 
-  getCuenta(id: string): Observable<any>{
-    const endpoint = `${this.api_url}/${id}`;
-    return this.http.get(endpoint);
+  getCuenta(id: string){
+    const endpoint= `${this.api_url}/${id}`;
+    const headers = {
+      'Content-Type':"application/json",
+      'Authorization': `Bearer ${localStorage.getItem('AuthToken')}`
+    }
+    return this.http.get<Cuenta>(endpoint, {headers}) ;
   }
 
   
