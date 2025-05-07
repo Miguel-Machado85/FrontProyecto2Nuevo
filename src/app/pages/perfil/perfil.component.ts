@@ -22,11 +22,6 @@ export class PerfilComponent {
   ngOnInit(){
     this.getCuenta();
   }
-  logOut(){
-    localStorage.removeItem('AuthToken');
-    localStorage.removeItem('id');  
-    this.Router.navigate(['/authentication/login']);
-  }
 
   getCuenta(){
     const id = localStorage.getItem('id') || '';

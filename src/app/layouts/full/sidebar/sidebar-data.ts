@@ -10,6 +10,11 @@ export const navItems: NavItem[] = [
     route: '/dashboard',
   },
   {
+    displayName: 'Productos',
+    iconName: 'solar:rolling-pin-bold',
+    route: '/productos'
+  },
+  {
     displayName: 'Dashboard 2',
     iconName: 'solar:chart-line-duotone',
     route: 'https://matdash-angular-main.netlify.app/dashboards/dashboard2',

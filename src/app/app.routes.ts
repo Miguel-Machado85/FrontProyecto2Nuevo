@@ -29,6 +29,16 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./pages/extra/extra.routes').then((m) => m.ExtraRoutes),
       },
+      {
+        path: 'productos',
+        loadChildren: ()=>
+          import('./pages/productos/producto-list/producto-list.routes').then((m) => m.ProductoRoutes)
+      },
+      {
+        path:'perfil',
+        loadChildren: ()=>
+          import('./pages/perfil/perfil.routes').then((m) => m.PerfilRoutes)
+      },
     ],
   },
   {
