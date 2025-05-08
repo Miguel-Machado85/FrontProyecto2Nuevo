@@ -6,4 +6,5 @@ export interface Cuenta {
       password: string;
       ProductosP?: any[]; 
       ProductosI?: any[];
+      estado?: string;
     }

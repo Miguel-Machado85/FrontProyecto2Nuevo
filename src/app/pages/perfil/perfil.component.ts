@@ -28,9 +28,6 @@ export class PerfilComponent {
     this.cuentaService.getCuenta(id).subscribe({
       next:(res)=>{
         this.cuenta = res;
-        console.log(res);
-        console.log(this.cuenta);
-        console.log(this.cuenta.id);
       },
       error:(err)=>{
         console.log(err);
