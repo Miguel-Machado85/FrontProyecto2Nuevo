@@ -39,6 +39,11 @@ export const routes: Routes = [
         loadChildren: ()=>
           import('./pages/perfil/perfil.routes').then((m) => m.PerfilRoutes)
       },
+      {
+        path:'recetas',
+        loadChildren: ()=>
+          import('./pages/recetas/recetas.routes').then((m) => m.RecetasRoutes)
+      }
     ],
   },
   {
@@ -57,10 +62,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: 'authentication/error',
-  },
-  {
-    path:'perfil',
-    loadChildren: ()=>
-      import('./pages/perfil/perfil.routes').then((m) => m.PerfilRoutes)
   },
 ];

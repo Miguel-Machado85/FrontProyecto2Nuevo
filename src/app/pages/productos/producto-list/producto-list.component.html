@@ -15,9 +15,16 @@
         </thead>
         <tbody>
           <tr *ngFor="let producto of listaProductos">
+            <td hidden>{{producto.id}}</td>
             <td>{{ producto.nombreProducto }}</td>
             <td>{{ producto.categoria }}</td>
             <td>{{ producto.estado || 'No especificado' }}</td>
+            <td>
+              <button mat-menu-item (click)="navegarProducto(producto.id)">
+                <mat-icon>edit</mat-icon>
+                <span>Info</span>
+            </button>
+            </td>
           </tr>
         </tbody>
       </table>

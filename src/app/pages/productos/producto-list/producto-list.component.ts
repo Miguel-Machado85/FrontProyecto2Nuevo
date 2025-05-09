@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class ProductoListComponent {
   listaProductos: Producto[]=[];
   
-  constructor(private productoService: ProductoService, private Router: Router){
+  constructor(private productoService: ProductoService, private router: Router){
       
   
     }
@@ -32,5 +32,11 @@ export class ProductoListComponent {
         console.log(err);
       }
     })
+  }
+
+  navegarProducto(id?: string){
+    if(id){
+      this.router.navigate(['productos/producto',id])
+    }
   }
 }

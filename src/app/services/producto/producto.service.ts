@@ -19,4 +19,13 @@ export class ProductoService {
       }
       return this.http.get<Producto[]>(endpoint, {headers}) ;
     }
+
+    getProductoById(id: string){
+      const endpoint= `${this.api_url}/${id}`;
+      const headers = {
+        'Content-Type':"application/json",
+        'Authorization': `Bearer ${localStorage.getItem('AuthToken')}`
+      }
+      return this.http.get<Producto>(endpoint, {headers})
+    }
 }
