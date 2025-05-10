@@ -53,8 +53,6 @@ export class ObjetoproductoComponent {
           categoria: producto.categoria,
           estado: producto.estado
         })
-        console.log(producto.nombreProducto);
-        console.log(producto.categoria);
       }, error:()=>{
         console.log("Error al encontrar producto");
       }
